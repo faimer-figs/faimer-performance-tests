@@ -127,6 +127,6 @@ public class OpenMRSClinic extends Simulation {
 		return http.baseUrl(org.openmrs.performance.Constants.BASE_URL).acceptHeader("application/json, text/plain, */*")
 		        .acceptLanguageHeader("en-US,en;q=0.5")
 		        .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0")
-		        .header("Authorization", "Bearer amRvZTpwYXNzd29yZA=").header("Content-Type", "application/json");
+		        .header("Authorization", "Basic amRvZTpwYXNzd29yZA=").header("Content-Type", "application/json");
 	}
 }
