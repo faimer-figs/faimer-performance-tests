@@ -2,6 +2,7 @@ package org.openmrs.performance.scenarios;
 
 import io.gatling.javaapi.core.ScenarioBuilder;
 import org.openmrs.performance.registries.ClerkRegistry;
+import org.openmrs.performance.utils.KeycloakAuth;
 
 import static io.gatling.javaapi.core.CoreDsl.scenario;
 
@@ -13,7 +14,7 @@ public class PatientRegistrationScenario extends Scenario<ClerkRegistry> {
 
 	@Override
 	public ScenarioBuilder getScenarioBuilder() {
-		return scenario("Clerk - Patient Registration").exec(registry.login()).exec(registry.openHomePage()).pause(3)
+		return scenario("Clerk - Patient Registration").exec(KeycloakAuth.login).exec(registry.login()).exec(registry.openHomePage()).pause(3)
 		        .exec(registry.openRegistrationPage()).pause(10).exec(registry.registerPatient())
 		        // redirect to patient chart page
 		        .exec(registry.openPatientChartPage("#{patientUuid}"));

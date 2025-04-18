@@ -3,6 +3,7 @@ package org.openmrs.performance.scenarios;
 import io.gatling.javaapi.core.FeederBuilder;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import org.openmrs.performance.registries.DoctorRegistry;
+import org.openmrs.performance.utils.KeycloakAuth;
 
 import static io.gatling.javaapi.core.CoreDsl.csv;
 import static io.gatling.javaapi.core.CoreDsl.scenario;
@@ -17,7 +18,9 @@ public class VisitPatientScenario extends Scenario<DoctorRegistry> {
 	public ScenarioBuilder getScenarioBuilder() {
 		FeederBuilder<String> patientUuidFeeder = csv("patient_uuids.csv").circular();
 
-		return scenario("Doctor - Visit Patient").feed(patientUuidFeeder).exec(registry.login())
+		return scenario("Doctor - Visit Patient")
+				.exec(KeycloakAuth.login)
+				.feed(patientUuidFeeder).exec(registry.login())
 		        .exec(registry.openHomePage()).pause(5).exec(registry.openPatientChartPage("#{patient_uuid}")).pause(5)
 		        .exec(registry.startVisit("#{patient_uuid}")).pause(5).exec(registry.openVisitsTab("#{patient_uuid}"))
 		        .pause(2).exec(registry.openVitalsAndBiometricsTab("#{patient_uuid}")).pause(5)

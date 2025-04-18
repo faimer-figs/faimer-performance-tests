@@ -124,9 +124,12 @@ public class OpenMRSClinic extends Simulation {
 	}
 
 	private HttpProtocolBuilder getHttpProtocol() {
-		return http.baseUrl(org.openmrs.performance.Constants.BASE_URL).acceptHeader("application/json, text/plain, */*")
-		        .acceptLanguageHeader("en-US,en;q=0.5")
-		        .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0")
-		        .header("Authorization", "Bearer YWRtaW46QWRtaW4xMjM=").header("Content-Type", "application/json");
+	    return http
+	        .baseUrl(org.openmrs.performance.Constants.BASE_URL)
+	        .acceptHeader("application/json, text/plain, */*")
+	        .acceptLanguageHeader("en-US,en;q=0.5")
+	        .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0")
+	        .contentTypeHeader("application/json")
+	        .header("Authorization", "Bearer #{access_token}");
 	}
 }

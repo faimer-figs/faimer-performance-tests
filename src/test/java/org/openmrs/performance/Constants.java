@@ -4,6 +4,14 @@ public class Constants {
 
 	public static final String BASE_URL = "https://oz-faimer-dev.mekomsolutions.net";
 
+	public static final String KEYCLOAK_URL = "https://auth.oz-faimer-dev.mekomsolutions.net";
+
+	public static final String KEYCLOAK_USERNAME = "admin";
+
+	public static final String KEYCLOAK_PASSWORD = "password";
+
+	public static final String KEYCLOAK_CLIENT_ID = "openmrs";
+
 	public static final String ENV_SIMULATION_PRESET = "SIMULATION_PRESET";
 
 	public static final String ENV_USER_INCREMENT_PER_TIER = "USER_INCREMENT_PER_TIER";

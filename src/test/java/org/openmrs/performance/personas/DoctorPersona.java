@@ -8,12 +8,13 @@ import java.util.List;
 
 public class DoctorPersona extends Persona<DoctorRegistry> {
 
-	public DoctorPersona(double loadShare) {
-		super(loadShare);
-	}
+    public DoctorPersona(double loadShare) {
+        super(loadShare);
+    }
 
-	@Override
-	public List<Scenario<DoctorRegistry>> getScenarios() {
-		return List.of(new VisitPatientScenario(1));
-	}
+    @Override
+    public List<Scenario<DoctorRegistry>> getScenarios() {
+        return List.of(new VisitPatientScenario(1)
+        );
+    }
 }
