@@ -1,3 +1,33 @@
+
+### Steps to run
+
+Note: Keycloak should contain a user with credentials `testFaimer:Admin123` with role `FAIMER Learner` 
+
+Build the project & check `.env` file to configure the server endpoints
+```bash
+yarn install
+```
+
+Run load tests without generating report
+
+```bash
+artillery run load-test/artillery.ts
+```
+
+Run load tests with json report
+
+```bash
+artillery run load-test/artillery.ts -o report.json
+```
+
+If you want to visualise load test reports then create an account on https://www.artillery.io/ and generate an API key.
+Then run
+
+```bash
+artillery run load-test/artillery.ts --record --key <API_KEY>
+```
+------
+
 <p align="center">
     <a href="https://docs.ozone-his.com/"><img src="https://raw.githubusercontent.com/ozone-his/.github/refs/heads/main/profile/ozone-logo.png" alt="Ozone" width="30%"/></a>
 </p>
