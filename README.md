@@ -1,6 +1,8 @@
 
 ### Steps to run
 
+Note: Keycloak should contain a user with credentials `testFaimer:Admin123` with role `FAIMER Learner` 
+
 Build the project & check `.env` file to configure the server endpoints
 ```bash
 yarn install
