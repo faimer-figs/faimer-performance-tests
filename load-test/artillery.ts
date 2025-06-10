@@ -1,4 +1,3 @@
-
 import {runDemoPatientsTest} from "./validate-demo-patients";
 import {runSamplePatientsTest} from "./validate-sample-patients";
 import {runSamplePatientsResultViewerTest} from "./validate-result-viewer";
@@ -9,8 +8,8 @@ export const config = {
     target: `${O3_URL}`,
     phases: [
         {
-            duration: 60,
-            arrivalCount:4,
+            duration: 300,
+            arrivalCount: 30,
         }
     ],
     engines: {
